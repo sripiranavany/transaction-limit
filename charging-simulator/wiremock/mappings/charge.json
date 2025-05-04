@@ -1,0 +1,29 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/charge",
+    "headers": {
+      "Content-Type": {
+        "equalTo": "application/json"
+      },
+      "Accept": {
+        "equalTo": "application/json"
+      }
+    },
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$[?(@.appId == 'APP_001')]"
+      },
+      {
+        "matchesJsonPath": "$[?(@.currency == 'LKR')]"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "body": "{\"status\": \"success\", \"message\": \"Charging successful\"}",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
